@@ -1,0 +1,19 @@
+1. Text files store data as human-readable characters using encoding like ASCII or UTF-8, while binary files store data in a format that is not directly human-readable, typically using a sequence of bytes. Text files contain plain text and are suitable for storing textual information, while binary files are used for storing non-textual data, such as images, audio, or executable programs.
+
+2. Text files are preferable when you need data to be human-readable or easily editable, like configuration files, source code, or simple data records. Binary files are preferred when you need to preserve data in a specific format without any text encoding overhead, such as multimedia files, databases, or proprietary file formats where structure matters.
+
+3. One issue with using binary operations to read and write a Python integer directly to disk is platform compatibility. Different platforms have different byte orders (endianess), which can lead to problems when reading binary data written on a different platform. It's important to use the `struct` module or specify the byte order explicitly to ensure portability.
+
+4. Using the `with` keyword (context manager) to open files in Python is beneficial because it automatically handles the file's closing, even if an exception occurs. This ensures that resources are properly managed and released, reducing the risk of memory leaks and making the code more robust.
+
+5. When reading a line of text in Python, the `readline()` function includes the trailing newline character (`'\n'`) unless the end of the file has been reached. When writing a line of text using `write()`, you need to explicitly include the newline character if you want it to be present at the end of the line.
+
+6. Random-access operations on files can be performed using the `seek()` method in Python. By positioning the file pointer at a specific byte offset, you can read or write data at that location within the file.
+
+7. The `struct` package in Python is often used when working with binary data that has a specific structure, such as parsing binary file formats, network protocols, or interfacing with hardware devices where data layout is crucial.
+
+8. Pickling is the best option when you need to serialize and store complex Python objects, including custom classes, dictionaries, and more. It's useful for persisting data structures and maintaining their integrity across Python sessions.
+
+9. The `shelve` package is best used when you need to store Python objects in a persistent dictionary-like format with key-value pairs. It's particularly useful for applications where you need to save and retrieve complex data structures between runs, such as storing program settings or user profiles.
+
+10. A special restriction when using the `shelve` package compared to other data dictionaries is that the keys in a `shelve` database must be strings. This limitation means you cannot use non-string keys, like integers or tuples, when working with a `shelve` database.
